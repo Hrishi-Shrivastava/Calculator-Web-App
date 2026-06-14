@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+}
+
+.calculator {
+    width: 320px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.display {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    word-wrap: break-word;
+    word-break: break-all;
+    height: 120px;
+}
+
+.previous-operand {
+    color: #rgba(255, 255, 255, 0.7)
+    font-size: 1.2rem;
+    min-height: 1.5rem;
+}
+
+.current-operand {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background-color: #e0e0e0;
+}
+
+.btn {
+    border: none;
+    background-color: #f9f9f9;
+    padding: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #eaeaea;
+}
+
+.btn.operator {
+    background-color: #f0f0f0;
+    color: #ff9500;
+    font-weight: bold;
+}
+
+.btn.operator:hover {
+    background-color: #e6e6e6;
+}
+
+.btn.clear, .btn.delete {
+    background-color: #ffcccc;
+    color: #d80000;
+}
+
+.btn.equal {
+    background-color: #ff9500;
+    color: white;
+}
+
+.btn.equal:hover {
+    background-color: #e08300;
+}
+
+/* Make the zero button span two columns */
+.btn.zero {
+    grid-column: span 2;
+}
