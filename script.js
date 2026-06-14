@@ -1,4 +1,3 @@
-// DOM Elements
 const currentDisplay = document.getElementById('current-operand');
 const previousDisplay = document.getElementById('previous-operand');
 const numberButtons = document.querySelectorAll('.number');
@@ -7,12 +6,10 @@ const clearButton = document.getElementById('clear');
 const deleteButton = document.getElementById('delete');
 const equalsButton = document.getElementById('equals');
 
-// State Variables
 let currentOperand = '';
 let previousOperand = '';
 let operation = undefined;
 
-// Functions
 function updateDisplay() {
     currentDisplay.innerText = currentOperand === '' ? '0' : currentOperand;
     if (operation != null) {
@@ -23,11 +20,9 @@ function updateDisplay() {
 }
 
 function appendNumber(number) {
-    // Prevent multiple decimals
+    
     if (number === '.' && currentOperand.includes('.')) return;
-    // Prevent leading multiple zeros
     if (number === '0' && currentOperand === '0') return;
-    // Replace initial 0 if typing a whole number
     if (currentOperand === '0' && number !== '.') {
         currentOperand = number;
     } else {
@@ -100,7 +95,6 @@ function deleteNumber() {
     currentOperand = currentOperand.toString().slice(0, -1);
 }
 
-// Event Listeners
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
         appendNumber(button.dataset.number);
